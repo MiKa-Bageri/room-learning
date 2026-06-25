@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ContactDao {
     @Upsert
-    fun insert(contact: Contact)
+    suspend fun insert(contact: Contact)
     @Query("SELECT * FROM contact")
     fun getAll(): List<Contact>
     @Query("SELECT * FROM contact WHERE id = :id")

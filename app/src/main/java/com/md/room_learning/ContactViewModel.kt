@@ -45,7 +45,6 @@ class ContactViewModel(
                     it.copy(isDialogVisible = false)
                 }
             }
-            ContactEvent.SaveContact -> TODO()
             is ContactEvent.SetFirstName -> {
                 _state.update {it.copy(
                     firstName = event.firstName
@@ -69,7 +68,7 @@ class ContactViewModel(
             is ContactEvent.SortContacts -> {
                 _sortType.value = event.sortType
             }
-            is ContactEvent.SaveContact -> {
+            ContactEvent.SaveContact -> {
                 val firstName = state.value.firstName
                 val lastName = state.value.lastName
                 val phoneNumber = state.value.phoneNumber
